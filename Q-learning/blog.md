@@ -129,25 +129,29 @@ There are about 1000 episodes the agent is trained on. Heres what each episode l
 
 ### Episode 1-100: Random Exploration
 ##### Early Q-table (mostly zeros)
+```
 State 0: [0.0, 0.1, -0.5, 0.2]  # Slight preferences emerging
 State 5: [0.0, 0.0, 0.0, 0.0]   # No experience yet
-
+```
 The agent moves randomly (high epsilon = 0.9), bumping into walls and obstacles, slowly building initial Q-values.
 
 ### Episode 200-500: Pattern Recognition
 ##### Q-table developing structure
+```
 State 0: [2.1, 8.5, 1.2, 0.8]   # Clearly prefers action 1 (right)
 State 1: [1.5, 9.2, 2.1, 4.1]   # Strong preference for right
 State 5: [5.2, 7.8, 3.1, 2.9]   # Learning optimal moves
+```
 
 The agent starts finding the goal occasionally. Q-values begin reflecting the true value of actions.
 
 ### Episode 800-1000: Mastery
 ##### Converged Q-table
+```
 State 0: [42.6, 48.5, 36.2, 35.1]  # Right (48.5) is clearly best
 State 1: [45.2, 54.9, 39.1, 42.6]  # Right (54.9) optimal
 State 4: [52.1, 62.2, 45.8, 48.3]  # Right (62.2) leads to goal
-
+```
 **Final learned path**: Right → Right → Right → Right → Down → Down → Down → Down (8 steps, optimal!)
 
 ### The Learning Curve
