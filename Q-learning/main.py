@@ -1,17 +1,10 @@
-from train import train_agent, visualize_learning, test_agent
+from train import train_agent_with_visualization, create_episode_timelapse_mp4, test_agent
 from environment import GridWorld
 from q_learning import QLearningAgent
 import numpy as np
 
 # Train the agent
-env, agent, rewards, steps = train_agent(1000)
+env, agent, rewards, steps, all_paths = train_agent_with_visualization(episodes=1000)
 
-# Visualize learning progress
-visualize_learning(rewards, steps)
+create_episode_timelapse_mp4(all_paths, speed_multiplier=4)
 
-# Test the trained agent
-test_agent(env, agent)
-
-# Show final Q-table (optional)
-print("\nFinal Q-table shape:", agent.q_table.shape)
-print("Max Q-values per state:", np.max(agent.q_table, axis=1))
