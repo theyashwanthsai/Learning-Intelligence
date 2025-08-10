@@ -1,7 +1,7 @@
 # Plan for learning Deep Learning
 
 #### Pre Req
-- [ ] Daniel Bourke's Course on Pytorch
+- [ ] Daniel Bourke's Course on Pytorch. [Youtube Link](https://youtu.be/Z_ikDlimN6A?si=U2Cjn_yjpvfmvFlV)
 - [ ] Pick one dataset and do a clean ML workflow on it
 
 ### ML Breakthroughs Chronological Implementations
@@ -48,6 +48,7 @@ Goal: Read, understand, and implement each paper to deeply learn architectures &
 - [ ] **2018** – AlphaZero (Mini) ([Paper](https://arxiv.org/abs/1712.01815))
 
 ---
+If you follow this, you’ll be dangerously good at PyTorch in ~4–6 months and you’ll also be fluent in reading & implementing papers, which is a big research skill.
 
 ## 🛠 How I Work on Each Paper
 1. Read abstract & intro.  
