@@ -1,8 +1,8 @@
 # Plan for learning Deep Learning
 
 #### Pre Req
-- [ ] Daniel Bourke's Course on Pytorch. [Youtube Link](https://youtu.be/Z_ikDlimN6A?si=U2Cjn_yjpvfmvFlV)
-- [ ] Pick one dataset and do a clean ML workflow on it
+- [x] Daniel Bourke's Course on Pytorch. [Youtube Link](https://youtu.be/Z_ikDlimN6A?si=U2Cjn_yjpvfmvFlV)
+- [x] Pick one dataset and do a clean ML workflow on it
 
 ### ML Breakthroughs Chronological Implementations
 
