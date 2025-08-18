@@ -76,7 +76,7 @@ if r_output != y:
 ```
 
 
-## 6. References
+## References
 - [Original paper](https://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf)
 - [Video 1](https://youtu.be/l-9ALe3U-Fg?si=SPOzBK1dZina8Oud)
 - [Video 2](https://youtu.be/Suevq-kZdIw)

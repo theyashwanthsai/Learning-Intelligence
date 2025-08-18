@@ -1,4 +1,4 @@
-# Paper #2 – MLP (2006)
+# Paper #2 – MLP (1986)
 
 **Paper:** [Link](https://www.cs.utoronto.ca/~hinton/absps/naturebp.pdf)  
 **Authors:** D. Rumelhart, Geoffrey E. Hinton, Ronald J. Williams
@@ -6,7 +6,7 @@
 **Implementation:** [Code Link](./mlp.py)
 
 ---
-To be done:
+
 ## Architecture
 Not coming from the paper, its just a general architecture for a MLP.
 
@@ -68,5 +68,5 @@ b2 -= lr * db2
 ```
 
 
-## 6. References
+## References
 - [Original paper](https://www.cs.utoronto.ca/~hinton/absps/naturebp.pdf)
