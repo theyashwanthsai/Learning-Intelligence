@@ -2,7 +2,7 @@
 
 **Paper:** [Link](https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf)  
 **Authors:** Yann LeCun, Leon Bottou, Yoshua Bengio, Patrick Haffner
-**Dataset:** MNIST
+**Dataset:** Cat vs Dog
 **Implementation:** [Code Link](./leNet5.ipynb)
 
 ---
@@ -88,6 +88,23 @@ Architecture overview:
 
 
 
+## Math
+#### Convolution
+H_out = (H_in - K + 2*P)/S +1
+W_out = (W_in - K + 2*P)/S +1
+
+H_in, W_in -> input height & width
+K -> Kernel size
+P -> Padding
+S -> Stride
+
+#### Pooling
+H_out = (H_out - K)/S + 1
+W_out = (W_out - K)/S + 1
+
+K -> Pooling kernel size
+S -> Stride
 
 ## References
 - [Original paper](https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf)
+- [Visual explanation of how cnns work]()
