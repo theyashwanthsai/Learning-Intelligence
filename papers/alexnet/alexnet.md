@@ -8,20 +8,66 @@
 ---
 
 ## Architecture
-8 learned layers:
-- 5 convolutional (Conv) layers → feature extraction.
-- 3 fully-connected (FC) layers → classification.
+- 8 learned layers:
+    - 5 convolutional (Conv) layers → feature extraction.
+    - 3 fully-connected (FC) layers → classification.
+- Final layer → 1000-way softmax (for ImageNet’s 1000 classes).
+- Uses ReLU after every Conv + FC layer.
+- Includes Local Response Normalization (LRN) and Overlapping Max-Pooling in specific spots.
+- Trained on two GPUs, with some layers split (I own a rtx 4060, so it should be fine i suppose)
 
-Final layer → 1000-way softmax (for ImageNet’s 1000 classes).
+#### Layer-by-layer breakdown
+Layer 1 — Conv + ReLU + LRN + MaxPooling
+- Conv: 96 filters of size 11 × 11 × 3, stride = 4.
+- Output: 55 × 55 × 96 feature maps.
+- ReLU applied.
+- LRN applied.
+- MaxPooling: 3 × 3 window, stride 2 → output size 27 × 27 × 96.
 
-Uses ReLU after every Conv + FC layer.
+Layer 2 — Conv + ReLU + LRN + MaxPooling
+- Conv: 256 filters of size 5 × 5 × 48 (note: split across 2 GPUs).
+- Input comes from pooled+normalized Layer 1.
+- Output: 27 × 27 × 256 → then pooled → 13 × 13 × 256.
+- ReLU applied.
+- LRN applied.
+- MaxPooling: 3 × 3 window, stride 2 → output 13 × 13 × 256.
 
-Includes Local Response Normalization (LRN) and Overlapping Max-Pooling in specific spots.
+Layer 3 — Conv + ReLU
+- Conv: 384 filters of size 3 × 3 × 256.
+- Connected to all maps from Layer 2 (both GPUs).
+- Output: 13 × 13 × 384.
+- ReLU applied.
+- No pooling, no normalization here.
 
-Trained on two GPUs, with some layers split.
+Layer 4 — Conv + ReLU
+- Conv: 384 filters of size 3 × 3 × 192.
+- Only connected to half of Layer 3’s maps (per GPU split).
+- Output: 13 × 13 × 384.
+- ReLU applied.
+
+Layer 5 — Conv + ReLU + MaxPooling
+- Conv: 256 filters of size 3 × 3 × 192.
+- Output: 13 × 13 × 256 → then pooled → 6 × 6 × 256.
+- ReLU applied.
+- MaxPooling: 3 × 3 window, stride 2.
+
+Layer 6 — Fully Connected + ReLU + Dropout
+- Input: Flattened 6 × 6 × 256 = 9216 values.
+- FC: 4096 neurons.
+- ReLU applied.
+- Dropout (p = 0.5).
+
+Layer 7 — Fully Connected + ReLU + Dropout
+- FC: 4096 neurons.
+- ReLU applied.
+- Dropout (p = 0.5).
+
+Layer 8 — Fully Connected + Softmax
+- FC: 1000 neurons.
+- Softmax: output probabilities over 1000 ImageNet classes.
 
 
-
+Note: LRN isn’t used anymore, it was replaced by Batch Normalization (Ioffe & Szegedy, 2015), which stabilizes training much better
 
 ## References
 - [Original paper](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
