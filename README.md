@@ -17,7 +17,7 @@ Goal: Read, understand, and implement each paper to deeply learn architectures &
 - [x] **1958** – Perceptron ([Paper](https://en.wikipedia.org/wiki/Perceptron))
 - [x] **1986** – Backpropagation MLP ([Paper](https://www.nature.com/articles/323533a0))
 - [x] **1998** – LeNet-5 ([Paper](http://yann.lecun.com/exdb/lenet/))
-- [ ] **2012** – AlexNet ([Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf))
+- [x] **2012** – AlexNet ([Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf))
 
 ### Phase 2 – CNN Revolution (2014–2016)
 - [ ] **2014** – VGGNet ([Paper](https://arxiv.org/abs/1409.1556))
