@@ -20,7 +20,7 @@ Goal: Read, understand, and implement each paper to deeply learn architectures &
 - [x] **2012** – AlexNet ([Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf))
 
 ### Phase 2 – CNN Revolution (2014–2016)
-- [ ] **2014** – VGGNet ([Paper](https://arxiv.org/abs/1409.1556))
+- [x] **2014** – VGGNet ([Paper](https://arxiv.org/abs/1409.1556))
 - [ ] **2014** – GoogLeNet / Inception v1 ([Paper](https://arxiv.org/abs/1409.4842))
 - [ ] **2015** – ResNet ([Paper](https://arxiv.org/abs/1512.03385))
 - [ ] **2016** – DenseNet ([Paper](https://arxiv.org/abs/1608.06993))
